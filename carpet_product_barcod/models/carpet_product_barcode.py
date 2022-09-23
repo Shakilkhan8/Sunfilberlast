@@ -34,12 +34,12 @@ class CarpetProductBarcode(models.Model):
     def create_product_template(self):
         l = []
         if self.categ_id.name == 'Digital Printed' or self.categ_id.name == 'Digital Printed with Felt' or self.categ_id.name == 'Tufted Graphics' or self.categ_id.name == 'Tufted Scroll':
-            name = self.categ_id.name + " " + " /" + self.digital_print_child.name + "/"+  "( " + self.carpet_color + " )" + " /  " + str(
-                self.meters) + "m" + " / " + self.carpet_quality.display_name
+            name = self.categ_id.name + "" + "/" + self.digital_print_child.name + "/"+ self.carpet_color + "/" + str(
+                self.meters) + "m" + "/" + self.carpet_quality.display_name
 
         else:
-            name = self.categ_id.name + " " + "( " + self.carpet_color + " )" + " /  " + str(
-            self.meters) + "m" + " / " + self.carpet_quality.display_name
+            name = self.categ_id.name + "/" + self.carpet_color+ "/" + str(
+            self.meters) + "m" + "/" + self.carpet_quality.display_name
             self.digital_print_child = False
 
         pro = self.env['product.template'].create({
@@ -80,9 +80,9 @@ class BarcodeLabelPrint(models.AbstractModel):
         rec = self.env['carpet.barcode'].search([('id', '=', self._context.get('active_id'))])
 
         if rec.digital_print_child:
-            product_name = rec.categ_id.name + " / " + rec.digital_print_child.name + " / "+ "( " + rec.carpet_color + " )" + " /  " + str(rec.meters) + "m" + " / " + rec.carpet_quality.display_name
+            product_name = rec.categ_id.name + " / " + rec.digital_print_child.name + " / " + rec.carpet_color + " / " + str(rec.meters) + "m" + " / " + rec.carpet_quality.display_name
         else:
-            product_name = rec.categ_id.name + " / " + "( " + rec.carpet_color + " )" + " /  " + str(rec.meters) + "m" + " / " + rec.carpet_quality.display_name
+            product_name = rec.categ_id.name + " / " + rec.carpet_color + " / " + str(rec.meters) + "m" + " / " + rec.carpet_quality.display_name
 
         return {
             'product_name': product_name,
