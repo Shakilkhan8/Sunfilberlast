@@ -85,7 +85,7 @@
                                       <t t-foreach="record" t-as="p">
                                           <tr>
                                               <td>
-                                                  <p class="mt-2"> <t t-esc="p['quantity']"/></p>kajdhajksdhak
+                                                  <p class="mt-2"> <t t-esc="p['quantity']"/></p>
                                               </td>
                                           </tr>
                                       </t>
