@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="carpet_product_group_id" model="res.groups">
+            <field name="name">Carpet / Production Area</field>
+        </record>
+
+        <record id="carpet_manager_group_id" model="res.groups">
+            <field name="name">Carpet / Manager</field>
+        </record>
+    </data>
+</odoo>

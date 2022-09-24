@@ -1,0 +1,6 @@
+<odoo>
+  <data>
+    <menuitem id="stock.menu_product_category_config_stock" groups="carpet_security_groups.carpet_manager_group_id"/>
+    <menuitem id="contacts.menu_contacts" name="Contacts" groups="carpet_security_groups.carpet_manager_group_id"/>
+  </data>
+</odoo>
