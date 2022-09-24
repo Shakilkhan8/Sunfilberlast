@@ -55,7 +55,7 @@
             <field name="view_mode">form</field>
         </record>
 
-        <menuitem id="carpet_barcode_menu_item_id" name="Carpet Barcode"  web_icon="carpet_product_barcod,static/src/img/carpetimage.jpg" action="carpet_barcode_action_view_id"/>
+        <menuitem id="carpet_barcode_menu_item_id" name="Carpet Barcode" groups="carpet_security_groups.carpet_product_group_id"  web_icon="carpet_product_barcod,static/src/img/carpetimage.jpg" action="carpet_barcode_action_view_id"/>
 
     </data>
 </odoo>
