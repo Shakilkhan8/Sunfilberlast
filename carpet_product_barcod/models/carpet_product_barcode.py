@@ -38,8 +38,8 @@ class CarpetProductBarcode(models.Model):
                 self.meters) + "m" + " / " + self.carpet_quality.display_name
 
         else:
-            name = self.categ_id.name + "/" + self.carpet_color+ "/" + str(
-            self.meters) + "m" + "/" + self.carpet_quality.display_name
+            name = self.categ_id.name + " / " + self.carpet_color+ " / " + str(
+            self.meters) + "m" + " / " + self.carpet_quality.display_name
             self.digital_print_child = False
 
         pro = self.env['product.template'].create({
