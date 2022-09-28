@@ -12,14 +12,14 @@
                    <div class="page">
 
 
-
                       <table class="mt-1" width="100%" style="border:1px solid black ">
                           <thead>
                               <th class="text-center" style="border: 1px solid black">Sr.No</th>
-                              <th class="text-center" style="border: 1px solid black">Description</th>
+                              <th class="text-center" style="border: 1px solid black">Product</th>
+                              <th class="text-center" style="border: 1px solid black">Quality</th>
                               <th class="text-center" style="border: 1px solid black">Width (Meter)</th>
                               <th class="text-center" style="border: 1px solid black">Length (Meter)</th>
-                              <th class="text-center" style="border: 1px solid black">Quantity</th>
+                              <th class="text-center" style="border: 1px solid black">Rolls</th>
                               <th class="text-center" style="border: 1px solid black">Rate</th>
                               <th class="text-center" style="border: 1px solid black">Amount (PKR)</th>
                           </thead>
@@ -49,7 +49,19 @@
                                       <t t-foreach="record" t-as="p">
                                           <tr>
                                               <td>
-                                                  <p class="mt-2"> <t t-esc="p['p_name']"/></p>
+                                                  <p class="mt-2"> <t t-esc="p['design']"/></p>
+                                              </td>
+                                          </tr>
+                                      </t>
+                                  </table>
+                              </td>
+
+                              <td style="border:1px solid black; text-align:center" height="400">
+                                  <table width="%" style="margin-top:-px" >
+                                      <t t-foreach="record" t-as="p">
+                                          <tr>
+                                              <td>
+                                                  <p class="mt-2"> <t t-esc="p['quality']"/></p>
                                               </td>
                                           </tr>
                                       </t>
@@ -124,6 +136,7 @@
                                   <td style="border-right:1px solid black; text-align:center"></td>
                                   <td style="border-right:1px solid black; text-align:center"><b><t t-esc="total_length"/></b></td>
                                   <td style="border-right:1px solid black; text-align:center"><b><t t-esc="total_qty"/></b> </td>
+                                  <td style="border-right:1px solid black; text-align:center"></td>
                                   <td style="border-right:1px solid black; text-align:center"></td>
 
                                   <td style="border-left:1px solid black; text-align:center"><b><t t-esc="total_amount" t-options='{"widget": "float", "precision": 0}'/> </b></td>
