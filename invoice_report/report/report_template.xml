@@ -24,7 +24,7 @@
                               <th class="text-center" style="border: 1px solid black">Amount (PKR)</th>
                           </thead>
                           <tr>
-                              <td style="border:1px solid black; text-align:center" height="400" >
+                              <td style="border:1px solid black; " height="400" >
                                   <table width="100%" style="margin-top:px">
                                       <t t-set="ser" t-value="0"/>
                                       <t t-set="total_length" t-value="0"/>
@@ -44,11 +44,11 @@
                                   </table>
                               </td>
 
-                              <td style="border:1px solid black; text-align:center" height="400">
-                                  <table width="%" style="margin-top:-px" >
+                              <td style="border:1px solid black; " height="400" class="text-center">
+                                  <table width="%" style="margin-left:15px">
                                       <t t-foreach="record" t-as="p">
                                           <tr>
-                                              <td>
+                                              <td style="">
                                                   <p class="mt-2"> <t t-esc="p['design']"/></p>
                                               </td>
                                           </tr>
@@ -56,11 +56,11 @@
                                   </table>
                               </td>
 
-                              <td style="border:1px solid black; text-align:center" height="400">
-                                  <table width="%" style="margin-top:-px" >
+                              <td style="border:1px solid black; " height="400" class="text-center" >
+                                  <table width="%" style="margin-left:15px">
                                       <t t-foreach="record" t-as="p">
                                           <tr>
-                                              <td>
+                                              <td style="">
                                                   <p class="mt-2"> <t t-esc="p['quality']"/></p>
                                               </td>
                                           </tr>
@@ -68,11 +68,11 @@
                                   </table>
                               </td>
 
-                              <td style="border:1px solid black; text-align:center" height="400">
-                                  <table width="%" style="margin-top:-px">
+                              <td style="border:1px solid black; " height="400" class="text-center">
+                                  <table width="%" style="margin-left:15px">
                                       <t t-foreach="record" t-as="p">
                                           <tr>
-                                              <td>
+                                              <td style="">
                                                   <p class="mt-2"><t t-esc="p['width']"/></p>
                                               </td>
                                           </tr>
@@ -80,48 +80,48 @@
                                   </table>
                               </td>
 
-                                  <td style="border:1px solid black; text-align:center" height="400">
-                                  <table width="%" style="margin-top:-px" >
+                                  <td style="border:1px solid black; " height="400" class="text-center">
+                                  <table width="%" style="margin-left:15px">
                                       <t t-foreach="record" t-as="p">
                                           <tr>
-                                              <td >
-                                                  <p class="mt-2"><t t-esc="p['length']"/></p>
+                                              <td style="">
+                                                  <p class="mt-2"><t t-esc="p['length']" t-options='{"widget": "float", "precision": 2}'/></p>
                                               </td>
                                           </tr>
                                       </t>
                                   </table>
                               </td>
 
-                              <td style="border:1px solid black; text-align:center" height="400">
-                                  <table width="%" style="margin-top:-px">
+                              <td style="border:1px solid black; " height="400" class="text-center">
+                                  <table width="%" style="margin-left:15px">
                                       <t t-foreach="record" t-as="p">
                                           <tr>
                                               <td>
-                                                  <p class="mt-2"> <t t-esc="p['quantity']"/></p>
+                                                  <p class="mt-2"> <t t-esc="p['quantity']" t-options='{"widget": "float", "precision": 2}'/></p>
                                               </td>
                                           </tr>
                                       </t>
                                   </table>
                               </td>
 
-                              <td style="border:1px solid black; text-align:center" height="400">
-                                  <table width="%" style="margin-top:-px">
+                              <td style="border:1px solid black; " height="400" class="text-center">
+                                  <table width="%" style="margin-left:15px">
                                       <t t-foreach="record" t-as="p">
                                           <tr>
                                               <td>
-                                                  <p class="mt-2"><t t-esc="p['price']"/></p>
+                                                  <p class="mt-2"><t t-esc="p['price']" t-options='{"widget": "float", "precision": 2}'/></p>
                                               </td>
                                           </tr>
                                       </t>
                                   </table>
                               </td>
 
-                              <td style="border:1px solid black; text-align:center" height="400">
-                                  <table width="%" style="margin-top:-px">
+                              <td style="border:1px solid black; " height="400" class="text-center">
+                                  <table width="%" style="margin-left:15px">
                                       <t t-foreach="record" t-as="p">
                                           <tr>
-                                              <td>
-                                                  <p class="mt-2"><t t-esc="p['amount']"/></p>
+                                              <td class="text-center">
+                                                  <p class="mt-2"><t t-esc="p['amount']" t-options='{"widget": "float", "precision": 2}'/></p>
                                               </td>
                                           </tr>
                                       </t>
@@ -131,8 +131,8 @@
                           </tr>
 
                               <tr style="border:1px solid black">
-                                  <td  style="border-right:1px solid black; text-align:center"><b></b></td>
-                                  <td style="border-right:1px solid black; text-align:center"><b>Total</b></td>
+                                  <td  style="border-right:1px solid black; "><b></b></td>
+                                  <td style="border-right:1px solid black; "><b>Total</b></td>
                                   <td style="border-right:1px solid black; text-align:center"></td>
                                   <td style="border-right:1px solid black; text-align:center"><b><t t-esc="total_length"/></b></td>
                                   <td style="border-right:1px solid black; text-align:center"><b><t t-esc="total_qty"/></b> </td>
