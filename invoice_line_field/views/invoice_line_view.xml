@@ -38,6 +38,10 @@
                        position="attributes">
                     <attribute name="force_save">1</attribute>
                 </xpath>
+                <xpath expr="//form/sheet/notebook/page/field[@name='invoice_line_ids']/tree/field[@name='quantity']"
+                       position="attributes">
+                    <attribute name="string">Square Foot</attribute>
+                </xpath>
 
                 <xpath expr="//form/sheet/notebook/page/field[@name='line_ids']/tree/field[@name='name']"
                        position="after">
