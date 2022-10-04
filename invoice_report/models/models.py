@@ -14,7 +14,7 @@ class InvoiceReportInheritModel(models.Model):
                 if with_exist:
                     with_exist[0]['amount'] += line.price_subtotal
                     with_exist[0]['length'] += line.product_id.carpet_length
-                    with_exist[0]['quantity'] += line.quantity
+                    with_exist[0]['sqf'] += line.sqf
                 else:
                     rec_lst.append({
                         'p_name': line.name,
@@ -23,7 +23,7 @@ class InvoiceReportInheritModel(models.Model):
                         'quality': line.product_id.carpet_quality_id.name,
                         'design': line.product_id.categ_id.name,
                         'price': line.price_unit,
-                        'quantity': line.quantity,
+                        'quantity': line.sqf,
                         'sqf': line.sqf,
                         'amount': line.price_subtotal,
                     })
@@ -36,7 +36,7 @@ class InvoiceReportInheritModel(models.Model):
                    'quality': line.product_id.carpet_quality_id.name,
                    'design': line.product_id.categ_id.name,
                    'price': line.price_unit,
-                   'quantity': line.quantity,
+                   'quantity': line.sqf,
                    'sqf': line.sqf,
                    'amount': line.price_subtotal,
                })
@@ -44,4 +44,6 @@ class InvoiceReportInheritModel(models.Model):
 
         return {
             'record': rec_lst,
+            'date': inv.invoice_date,
+            'partner': inv.partner_id.name,
         }

@@ -8,14 +8,12 @@
 					Bill Report
                 </h5>
                 <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-6 text-left">
-                            <span>Party Name:
-<!--                                <t t-esc="o.partner_id.name"/>-->
-                            </span>
-                        </div>
-<!--                        <div class="col-6 text-right"><span><t t-esc="o.invoice_date"/></span></div>-->
-                    </div>
+                    <table width="100%">
+                        <tr>
+                            <td>Party Name: <t t-esc="partner"/></td>
+                            <td class="text-right">Date: <t t-esc="date"/></td>
+                        </tr>
+                    </table>
 
                 </div>
             </div>
