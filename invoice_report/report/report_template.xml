@@ -11,7 +11,6 @@
                     <t t-set="total_amount" t-value="0"/>
                     <div class="page">
 
-
                         <table class="mt-1" width="100%" style="border:1px solid black ">
                             <thead>
                                 <th class="text-center" style="border: 1px solid black">Sr.No</th>
@@ -24,7 +23,7 @@
                                 <th class="text-center" style="border: 1px solid black">Amount (PKR)</th>
                             </thead>
                             <tr>
-                                <td style="border:1px solid black; " height="400">
+                                <td style="border:1px solid black; " height="600">
                                     <table width="100%" style="margin-top:px">
                                         <t t-set="ser" t-value="0"/>
                                         <t t-set="total_length" t-value="0"/>
@@ -47,7 +46,7 @@
                                     </table>
                                 </td>
 
-                                <td style="border:1px solid black; " height="400" class="text-center">
+                                <td style="border:1px solid black; " height="600" class="text-center">
                                     <table width="%" style="margin-left:10px">
                                         <t t-foreach="record" t-as="p">
                                             <tr>
@@ -61,7 +60,7 @@
                                     </table>
                                 </td>
 
-                                <td style="border:1px solid black; " height="400" class="text-center">
+                                <td style="border:1px solid black; " height="600" class="text-center">
                                     <table width="%" style="margin-left:10px">
                                         <t t-foreach="record" t-as="p">
                                             <tr>
@@ -76,7 +75,7 @@
                                     </table>
                                 </td>
 
-                                <td style="border:1px solid black; " height="400" class="text-center">
+                                <td style="border:1px solid black; " height="600" class="text-center">
                                     <table width="%" style="margin-left:10px">
                                         <t t-foreach="record" t-as="p">
                                             <tr>
@@ -90,7 +89,7 @@
                                     </table>
                                 </td>
 
-                                <td style="border:1px solid black; " height="400" class="text-center">
+                                <td style="border:1px solid black; " height="600" class="text-center">
                                     <table width="%" style="margin-left:10px">
                                         <t t-foreach="record" t-as="p">
                                             <tr>
@@ -104,7 +103,7 @@
                                     </table>
                                 </td>
 
-                                <td style="border:1px solid black; " height="400" class="text-center">
+                                <td style="border:1px solid black; " height="600" class="text-center">
                                     <table width="%" style="margin-left:10px">
                                         <t t-foreach="record" t-as="p">
                                             <tr>
@@ -121,7 +120,7 @@
 
 
 
-                                <td style="border:1px solid black; " height="400" class="text-center">
+                                <td style="border:1px solid black; " height="600" class="text-center">
                                     <table width="%" style="margin-left:10px">
                                         <t t-foreach="record" t-as="p">
                                             <tr>
@@ -136,7 +135,7 @@
                                     </table>
                                 </td>
 
-                                <td style="border:1px solid black; " height="400" class="text-center">
+                                <td style="border:1px solid black; " height="600" class="text-center">
                                     <table width="%" style="margin-left:10px">
                                         <t t-foreach="record" t-as="p">
                                             <tr>
