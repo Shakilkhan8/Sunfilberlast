@@ -10,7 +10,7 @@ class InvoiceReportInheritModel(models.Model):
         rec_lst = []
         for line in inv.invoice_line_ids:
             if rec_lst:
-                with_exist = list(filter(lambda item: item if item['design'] ==  line.product_id.categ_id.name and item['quality'] == line.product_id.carpet_quality_id.name else None, rec_lst ))
+                with_exist = list(filter(lambda item: item if item['design'] ==  line.product_id.categ_id.name and item['quality'] == line.product_id.carpet_quality_id.name and item['grade'] == line.product_id.carpet_grade_id.id  else None, rec_lst ))
                 if with_exist:
                     with_exist[0]['amount'] += line.price_subtotal
                     with_exist[0]['length'] += line.product_id.carpet_length
@@ -26,6 +26,7 @@ class InvoiceReportInheritModel(models.Model):
                         'quantity': line.sqf,
                         'sqf': line.sqf,
                         'amount': line.price_subtotal,
+                        'grade': line.product_id.carpet_grade_id.id,
                     })
 
             else:
@@ -39,6 +40,7 @@ class InvoiceReportInheritModel(models.Model):
                    'quantity': line.sqf,
                    'sqf': line.sqf,
                    'amount': line.price_subtotal,
+                   'grade': line.product_id.carpet_grade_id.id,
                })
 
 
