@@ -8,13 +8,9 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
-
-
-
                 <xpath expr="//field[@name='partner_id']" position="after">
                     <field name="sub_customer"/>
                     <field name="customer_note"/>
-
                 </xpath>
                 <xpath expr="//field[@name='payment_term_id']" position="replace">
                     <field name="order_type"/>
@@ -23,9 +19,6 @@
                 <!-- sale order note-->
                 <xpath expr="//field[@name='sale_order_template_id']" position="after">
                     <field name="payment_received"/>
-                </xpath>
-                <xpath expr="//field[@name='partner_id']" position="after">
-                    <field name="total_roll" invisible="True"/>
                 </xpath>
 
                 <xpath expr="//field[@name='sale_order_template_id']" position="attributes">
@@ -116,6 +109,7 @@
                                     <field name="color_6m" optional="hide"/>
                                     <field name="color_7" optional="hide"/>
                                     <field name="color_7l" optional="hide"/>
+                                    <field name="color_7r" optional="hide"/>
                                     <field name="color_8" optional="hide"/>
                                     <field name="color_9" optional="hide"/>
                                     <field name="color_10" optional="hide"/>
@@ -164,6 +158,58 @@
                                     <field name="color_46" optional="hide"/>
                                     <field name="color_47" optional="hide"/>
                                     <field name="color_48" optional="hide"/>
+                                    <field name="color_49" optional="hide"/>
+                                    <field name="color_50" optional="hide"/>
+                                    <field name="color_51" optional="hide"/>
+                                    <field name="color_52" optional="hide"/>
+                                    <field name="color_53" optional="hide"/>
+                                    <field name="color_54" optional="hide"/>
+                                    <field name="color_55" optional="hide"/>
+                                    <field name="color_56" optional="hide"/>
+                                    <field name="color_57" optional="hide"/>
+                                    <field name="color_58" optional="hide"/>
+                                    <field name="color_59" optional="hide"/>
+                                    <field name="color_60" optional="hide"/>
+                                    <field name="color_61" optional="hide"/>
+                                    <field name="color_62" optional="hide"/>
+                                    <field name="color_63" optional="hide"/>
+                                    <field name="color_64" optional="hide"/>
+                                    <field name="color_65" optional="hide"/>
+                                    <field name="color_66" optional="hide"/>
+                                    <field name="color_67" optional="hide"/>
+                                    <field name="color_68" optional="hide"/>
+                                    <field name="color_69" optional="hide"/>
+                                    <field name="color_70" optional="hide"/>
+                                    <field name="color_71" optional="hide"/>
+                                    <field name="color_72" optional="hide"/>
+                                    <field name="color_73" optional="hide"/>
+                                    <field name="color_74" optional="hide"/>
+                                    <field name="color_75" optional="hide"/>
+                                    <field name="color_76" optional="hide"/>
+                                    <field name="color_77" optional="hide"/>
+                                    <field name="color_78" optional="hide"/>
+                                    <field name="color_79" optional="hide"/>
+                                    <field name="color_80" optional="hide"/>
+                                    <field name="color_81" optional="hide"/>
+                                    <field name="color_82" optional="hide"/>
+                                    <field name="color_83" optional="hide"/>
+                                    <field name="color_84" optional="hide"/>
+                                    <field name="color_85" optional="hide"/>
+                                    <field name="color_86" optional="hide"/>
+                                    <field name="color_87" optional="hide"/>
+                                    <field name="color_88" optional="hide"/>
+                                    <field name="color_89" optional="hide"/>
+                                    <field name="color_90" optional="hide"/>
+                                    <field name="color_91" optional="hide"/>
+                                    <field name="color_92" optional="hide"/>
+                                    <field name="color_93" optional="hide"/>
+                                    <field name="color_94" optional="hide"/>
+                                    <field name="color_95" optional="hide"/>
+                                    <field name="color_96" optional="hide"/>
+                                    <field name="color_97" optional="hide"/>
+                                    <field name="color_98" optional="hide"/>
+                                    <field name="color_99" optional="hide"/>
+                                    <field name="color_100" optional="hide"/>
                                     <field name="total_qty" force_save="True"/>
                                     <field name="square_foot" force_save="True"/>
                                     <field name="price_unit" force_save="True"/>
@@ -171,16 +217,6 @@
                                     <field name="total_price" force_save="True"/>
                                     <field name="image" widget="image" width="40px" height="40px"/>
                                 </tree>
-
-<!--                                <form>-->
-<!--                                    <field name="display_type" invisible="1"/>-->
-<!--                                    &lt;!&ndash;-->
-<!--                                        We need the sequence field to be here for new lines to be added at the correct position.-->
-<!--                                        TODO: at some point we want to fix this in the framework so that an invisible field is not required.-->
-<!--                                    &ndash;&gt;-->
-<!--                                    <field name="sequence" invisible="1"/>-->
-<!--                                </form>-->
-
                             </field>
                         </page>
                     </notebook>
@@ -193,7 +229,6 @@
                         </div>
                     </div>
                 </xpath>
-
             </field>
         </record>
 
