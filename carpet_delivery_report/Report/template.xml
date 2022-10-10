@@ -39,9 +39,9 @@
                         <table width="100%" style="border:1px solid gray">
                                 <thead style="border:1px solid gray">
                                     <th width="5%" style="border:1px solid gray" class="text-center">SR.</th>
-                                    <th width="35%" style="border:1px solid gray" class="text-center">Product</th>
-                                    <th width="10%" style="border:1px solid gray" class="text-center">Design</th>
-                                    <th width="10%" style="border:1px solid gray" class="text-center">Quality</th>
+                                    <th width="25%" style="border:1px solid gray" class="text-center">Product</th>
+                                    <th width="15%" style="border:1px solid gray" class="text-center">Design</th>
+                                    <th width="15%" style="border:1px solid gray" class="text-center">Quality</th>
                                     <th width="10%" style="border:1px solid gray" class="text-center">Color</th>
                                     <th width="10%" style="border:1px solid gray" class="text-center">Length</th>
                                     <th width="10%" style="border:1px solid gray" class="text-center">Width</th>
@@ -62,15 +62,15 @@
                                                 class="text-center">
                                                 <t t-esc="ser"/>
                                             </td>
-                                            <td width="35%" height="30" style="border:1px solid gray"
+                                            <td width="25%" height="30" style="border:1px solid gray"
                                                 class="text-center">
                                                 <t t-esc="p['design_name']"/>
                                             </td>
-                                            <td width="10%" height="30" style="border:1px solid gray"
+                                            <td width="15%" height="30" style="border:1px solid gray"
                                                 class="text-center">
                                                 <t t-esc="p['child_design']"/>
                                             </td>
-                                            <td width="10%" height="30" style="border:1px solid gray"
+                                            <td width="15%" height="30" style="border:1px solid gray"
                                                 class="text-center">
                                                 <t t-esc="p['quality_name']"/>
                                             </td>
@@ -102,7 +102,7 @@
                                         <td style="border:1px solid gray" colspan="" class="text-center"></td>
                                         <td style="border:1px solid gray" colspan="" class="text-center"></td>
                                         <td style="border:1px solid gray" class="text-center">
-                                            <b> <t t-esc="total_length"/> </b>
+                                            <b> <t t-esc="total_length"  t-options='{"widget": "float", "precision": 2}'/> </b>
                                         </td>
                                         <td style="border:1px solid gray" colspan=""></td>
                                         <td style="border:1px solid gray" colspan=""></td>
@@ -120,6 +120,10 @@
                                 </span>
                                 <br/>
                                 <br/>
+                            </div>
+                        </div>
+                        <div class="row">
+                             <div class="col-12">
                                 <p>
                                     <t t-if="order.sale_id.customer_note">
                                         <b> Note: </b>
