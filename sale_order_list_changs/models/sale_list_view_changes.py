@@ -10,15 +10,4 @@ class SaleOrderListView(models.Model):
     def action_dispatch(self):
         self.state = 'dispatch'
 
-    @api.model
-    def create(self, vals_list):
-        vals_list['create_date'] = vals_list['order_create_date']
-        res = super(SaleOrderListView, self).create(vals_list)
-        return res
-
-    @api.model
-    def write(self, vals):
-        vals['create_date'] = vals['order_create_date']
-        res = super(SaleOrderListView, self).write(vals)
-        return res
 
