@@ -34,7 +34,7 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem id="carpet_grade_menu_item_id" name="Carpet Grades" groups="carpet_security_groups.carpet_manager_group_id" action="carpet_grade_action_id" parent="stock.menu_stock_config_settings"/>
+        <menuitem id="carpet_grade_menu_item_id" name="Carpet Grades" action="carpet_grade_action_id" parent="stock.menu_stock_config_settings"/>
 
 
     </data>

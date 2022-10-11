@@ -36,7 +36,7 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem id="carpet_quality_menu_item_id" name="Carpet Quality" groups="carpet_security_groups.carpet_manager_group_id" action="carpet_quality_action_id" parent="stock.menu_stock_config_settings"/>
+        <menuitem id="carpet_quality_menu_item_id" name="Carpet Quality"  action="carpet_quality_action_id" parent="stock.menu_stock_config_settings"/>
 
     </data>
 </odoo>
