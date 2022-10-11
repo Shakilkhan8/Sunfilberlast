@@ -82,13 +82,7 @@ class CarpetColorModel(models.Model):
             order_total += line.total_price
             self.total_price = order_total
 
-            # if both design and quality selected then we concatenate the both to create product name
-            if line.design_id and line.quality_id:
-                if line.child_design_id:
-                    line.product_id = line.design_id.name + " / " + str(
-                        line.child_design_id.name) + " / " + line.quality_id.name
-                else:
-                    line.product_id = line.design_id.name + " " + line.quality_id.name
+
 
 
 class CarpetColorline(models.Model):
@@ -248,12 +242,22 @@ class CarpetColorline(models.Model):
         if self.design_id:
             self.image = self.design_id.design_image
 
-        # here we make child design required on the base of come specific category
+        # here we make child design required on the base of some specific category
         if self.design_id.name == 'Digital Printed' or self.design_id.name == 'Digital Printed with Felt' or self.design_id.name == 'Tufted Graphics' or self.design_id.name == 'Tufted Scroll':
             self.check_design = True
         else:
             self.check_design = False
 
+    @api.onchange('design_id', 'quality_id')
+    def _onchange_design_quality(self):
+        # if both design and quality selected then we concatenate the both to create product name
+        for line in self:
+            if line.design_id and line.quality_id:
+                if line.child_design_id:
+                    line.product_id = line.design_id.name + "/" + str(
+                        line.child_design_id.name) + "/" + line.quality_id.name
+                else:
+                    line.product_id = line.design_id.name + " " + line.quality_id.name
 
 class InheritSaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
