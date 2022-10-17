@@ -134,7 +134,7 @@
                 </xpath>
 
                 <xpath expr="//field[@name='expected_date']" position="replace">
-                    <field name="expect_date"/>
+                    <field name="expect_date" optional="show"/>
                 </xpath>
 
                 <xpath expr="//field[@name='state']" position="after">
