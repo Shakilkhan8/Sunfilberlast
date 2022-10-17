@@ -8,22 +8,43 @@
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
 
-                <xpath expr="//form/sheet/notebook/page/field/tree/field[@name='product_id']" position="attributes">
-                    <attribute name="options">{'no_create_edit': True, 'no_create': True}</attribute>
+                <xpath expr="//header" position="replace">
+                     <header>
+                    <field name="authorized_transaction_ids" invisible="1"/>
+                    <button name="payment_action_capture" type="object" data-hotkey="shift+g" string="Capture Transaction" class="oe_highlight" attrs="{'invisible': [('authorized_transaction_ids', '=', [])]}"/>
+                    <button name="payment_action_void" type="object" string="Void Transaction" data-hotkey="shift+v" confirm="Are you sure you want to void the authorized transaction? This action can't be undone." attrs="{'invisible': [('authorized_transaction_ids', '=', [])]}"/>
+                    <button name="291" string="Create Invoice" type="action" class="btn-primary" data-hotkey="q" attrs="{'invisible': [('invoice_status', '!=', 'to invoice')]}"/>
+                    <button name="291" string="Create Invoice" type="action" context="{'default_advance_payment_method': 'percentage'}" data-hotkey="q" attrs="{'invisible': ['|',('invoice_status', '!=', 'no'), ('state', '!=', 'sale')]}"/>
+                    <button name="action_quotation_send" string="Send by Email" type="object" states="draft" class="btn-primary" data-hotkey="g"/>
+                    <button name="action_quotation_send" type="object" string="Send PRO-FORMA Invoice" groups="sale.group_proforma_sales" class="btn-primary" attrs="{'invisible': ['|', ('state', '!=', 'draft'), ('invoice_count','&gt;=',1)]}" context="{'proforma': True}"/>
+                    <button name="action_confirm" id="action_confirm" data-hotkey="v" string="Confirm" class="btn-primary" type="object" attrs="{'invisible': [('state', 'not in', ['sent'])]}"/>
+                    <button name="action_confirm" data-hotkey="v" string="Confirm" type="object" attrs="{'invisible': [('state', 'not in', ['draft', 'dispatch'])]}"/>
+                    <button name="action_quotation_send" type="object" string="Send PRO-FORMA Invoice" groups="sale.group_proforma_sales" attrs="{'invisible': ['|', ('state', '=', 'draft'), ('invoice_count','&gt;=',1)]}" context="{'proforma': True}"/>
+                    <button name="action_quotation_send" string="Send by Email" type="object" states="sent,sale" data-hotkey="g"/>
+                    <button name="action_cancel" type="object" string="Cancel" attrs="{'invisible': ['|', ('state', 'not in', ['draft', 'sent','sale']), ('id', '=', False)]}" data-hotkey="z"/>
+                    <button name="action_draft" states="cancel" type="object" string="Set to Quotation" data-hotkey="w"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,sent,sale,dispatch"/>
+                    <button type="object" name="action_dispatch" string="Dispatch" attrs="{'invisible': [('state', 'in', ('dispatch', 'sale','cancel', 'sent', 'done'))]}"/>
+
+                </header>
                 </xpath>
 
-                <xpath expr="//form/header/button[@name='action_confirm']" position="after">
-                    <button type="object" name="action_dispatch" string="Dispatch" class="oe_highlight"/>
+                <xpath expr="//form/sheet/notebook/page/field/tree/field[@name='product_id']" position="attributes">
+                    <attribute name="options">{'no_create_edit': True, 'no_create': True}</attribute>
                 </xpath>
 
                 <xpath expr="//field[@name='validity_date']" position="attributes">
                    <attribute name="invisible">True</attribute>
                 </xpath>
-
+                <xpath expr="//div[@class='o_td_label']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_order']" position="replace">
+                    <field name="receive_date" string="Receive Date"/>
+                </xpath>
                 <xpath expr="//field[@name='date_order']" position="after">
-                    <field name="expect_date" string="Receive Date"/>
-                    <field name="order_create_date" string="Delivery Date"/>
-                    <field name="total_roll" invisible="True"/>
+                    <field name="expect_date" string="Expect Date"/>
+                    <field name="total_roll" />
                 </xpath>
 
             </field>
@@ -54,7 +75,7 @@
                 </xpath>
 
                 <xpath expr="//field[@name='name']" position="after">
-                    <field name="create_date"/>
+                    <field name="receive_date"/>
                     <field name="partner_id"/>
                     <field name="sub_customer"/>
                     <field name="total_roll" sum="Total Roll"/>
@@ -98,7 +119,7 @@
                 </xpath>
 
                 <xpath expr="//field[@name='name']" position="after">
-                    <field name="order_create_date"/>
+                    <field name="receive_date"/>
                     <field name="partner_id"/>
                     <field name="sub_customer"/>
                     <field name="total_roll" sum="Total Roll"/>
@@ -110,6 +131,10 @@
                 </xpath>
                 <xpath expr="//field[@name='amount_total']" position="attributes">
                     <attribute name="invisible">True</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='expected_date']" position="replace">
+                    <field name="expect_date"/>
                 </xpath>
 
                 <xpath expr="//field[@name='state']" position="after">
